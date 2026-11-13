@@ -1,0 +1,14 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "bala295462",
+  "version": 4,
+  "repository_url": "https://github.com/mathesis-papers/6aec296c8d83894561e7bb78",
+  "site_url": "https://papers.trureturing.org/6aec296c8d83894561e7bb78/",
+  "doi": "10.5281/zenodo.23971279",
+  "reading": {
+    "en": "https://papers.trureturing.org/6aec296c8d83894561e7bb78/en/",
+    "zh": "https://papers.trureturing.org/6aec296c8d83894561e7bb78/zh/"
+  },
+  "slides": [],
+  "visualizations": []
+}

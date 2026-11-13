@@ -1,0 +1,62 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 108445,
+      "matches_public": null,
+      "path": "paper.pdf",
+      "public_sha256": null,
+      "sha256": "734a22a1e6a901dbed284b3c75196fc10976ca431ee19af7325f795faf20ffde"
+    },
+    "source": {
+      "bytes": 18160,
+      "matches_public": null,
+      "path": "manuscript/",
+      "public_sha256": null,
+      "sha256": "5b1938a1ca48fb1e3b7ac4e6075d8acc6475be15065348779f352df0f42d5e89"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Extending Bala's divisibility results (Bala, 2026), we prove his conjecture in OEIS A295462, References (%D), record #19; contribution dated 23 August 2026: the integer a(n)=(15n)!(2n)!/((10n)!(6n)!n!) is odd exactly when consecutive one-bits of n have at least three zero-bits between them. A nonnegative floor function expresses its prime valuations. We reprove Bala's two divisibilities (Bala, 2026) and deduce product divisibility by (6n+1)(10n+1), preservation of the parity criterion, and counting and ordered recursions. We give written alternative proofs of the eleven XOR identities in A048718, verified by Karlsson (2022) with Walnut. For T(n)=(12n)!n!/((6n)!(4n)!(3n)!), we prove the five fixed divisibilities and both product families posed in A295431 on 28 August 2025, with C(k,R)=36(R-1)!lcm(1,...,12R) for k=1,2,3 and D(R)=(R-1)!lcm(1,...,R).",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": "10.5281/zenodo.23971278",
+    "current_version": 4,
+    "doi": "10.5281/zenodo.23971279",
+    "lean_source": {
+      "revision": "b95cdbb8cccca425964251ba38cc0b0e517e478a",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/b95cdbb8cccca425964251ba38cc0b0e517e478a/D5/S3/Arith/FactorialRatio/BalaA295462Parity.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "url": "/api/v1/collected-papers/bala295462/files/pdf?version=4"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-05T06:59:56.487474879Z",
+    "record": "bala295462",
+    "repository_name": "6aec296c8d83894561e7bb78",
+    "source": {
+      "url": "/api/v1/collected-papers/bala295462/files/source?version=4"
+    },
+    "title": "Parity and product extensions of Bala's divisibilities (2026): OEIS A295462, References (record #19; contribution dated 23 August 2026)",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-05T06:59:56.487474879Z",
+        "revision": "4",
+        "version": 4
+      }
+    ],
+    "work": "bala295462"
+  }
+}

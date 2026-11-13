@@ -1,0 +1,15 @@
+{
+  "id": "bala295462",
+  "revision": 4,
+  "problem_ids": ["bala295462"],
+  "topic": "Bala's parity conjecture in OEIS A295462, References (%D), record #19; contribution dated 23 August 2026",
+  "title": "Parity and product extensions of Bala's divisibilities (2026): OEIS A295462, References (record #19; contribution dated 23 August 2026)",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "Extending Bala's divisibility results (Bala, 2026), we prove his conjecture in OEIS A295462, References (%D), record #19; contribution dated 23 August 2026: the integer a(n)=(15n)!(2n)!/((10n)!(6n)!n!) is odd exactly when consecutive one-bits of n have at least three zero-bits between them. A nonnegative floor function expresses its prime valuations. We reprove Bala's two divisibilities (Bala, 2026) and deduce product divisibility by (6n+1)(10n+1), preservation of the parity criterion, and counting and ordered recursions. We give written alternative proofs of the eleven XOR identities in A048718, verified by Karlsson (2022) with Walnut. For T(n)=(12n)!n!/((6n)!(4n)!(3n)!), we prove the five fixed divisibilities and both product families posed in A295431 on 28 August 2025, with C(k,R)=36(R-1)!lcm(1,...,12R) for k=1,2,3 and D(R)=(R-1)!lcm(1,...,R).",
+  "summary": "The four-separated binary parity criterion for A295462 and its product quotient extend Bala's divisibilities (2026), reproved here. Written alternative proofs of the eleven A048718 XOR identities credit Karlsson's Walnut verification (2022). The two ratios' integrality credits Bober (2007/2009), with Soundararajan's later elementary classification proof (2019). Explicit constants settle the A295431 product-divisibility families. Congruence towers credit Zudilin's prime-step result (2019), Bajaj and Burns' general theorem (August 2026), and Blanco Gomez's later explicit treatment (October 2026). The half/third integrality questions posed by Bala (2016) are mapped to Blanco Gomez's proof (2026).",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/b95cdbb8cccca425964251ba38cc0b0e517e478a/D5/S3/Arith/FactorialRatio/BalaA295462Parity.lean"
+}

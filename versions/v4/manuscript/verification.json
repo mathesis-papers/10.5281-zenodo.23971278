@@ -1,0 +1,98 @@
+{
+  "status": "pass",
+  "floor_intervals": 30,
+  "binary_valuation_range": [
+    0,
+    65535
+  ],
+  "floor_sum_range": [
+    0,
+    4095
+  ],
+  "exact_factorial_and_product_divisibility_range": [
+    0,
+    256
+  ],
+  "hypergeometric_ratio_range": [
+    0,
+    255
+  ],
+  "hypergeometric_polynomial_identity": true,
+  "binary_floor_rows_rational_bounds": 6,
+  "divisibility_floor_rows_rational_bounds": 6,
+  "counting_widths": [
+    0,
+    16
+  ],
+  "counts": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    10,
+    14,
+    19,
+    26,
+    36,
+    50,
+    69,
+    95,
+    131,
+    181,
+    250
+  ],
+  "initial_terms": [
+    1,
+    1001,
+    2731365,
+    8452632980,
+    27614258931525,
+    92994778322102376,
+    319323042934810327908,
+    1111423634892509277158820,
+    3907116913932203786698907205,
+    13840531451943824412017357524400,
+    49326067264186310295180241747943240,
+    176657291645522807951014259080005974280
+  ],
+  "sibling_checks": {
+    "xor_triples": 11,
+    "xor_sparse_indices_below_65536": 250,
+    "all_bitwise_masks": [
+      0,
+      15
+    ],
+    "ordered_recursion_indices": [
+      0,
+      249
+    ],
+    "sibling_floor_intervals": 12,
+    "residue_moduli": [
+      5,
+      4096
+    ],
+    "fixed_divisibilities": 5,
+    "sibling_exact_range": [
+      0,
+      256
+    ],
+    "product_family_R_range": [
+      1,
+      32
+    ],
+    "product_family_k": [
+      1,
+      2,
+      3
+    ],
+    "small_prime_exponent_range": [
+      1,
+      96
+    ],
+    "small_prime_stress_cases": 44352,
+    "sibling_binomial_and_coefficient_identities": true
+  },
+  "coverage": "Exact finite checks and polynomial identities; the all-input argument is in note.tex."
+}
