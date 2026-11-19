@@ -2,16 +2,16 @@
   "files": {
     "pdf": {
       "bytes": 108445,
-      "matches_public": null,
+      "matches_public": true,
       "path": "paper.pdf",
-      "public_sha256": null,
+      "public_sha256": "734a22a1e6a901dbed284b3c75196fc10976ca431ee19af7325f795faf20ffde",
       "sha256": "734a22a1e6a901dbed284b3c75196fc10976ca431ee19af7325f795faf20ffde"
     },
     "source": {
       "bytes": 18160,
-      "matches_public": null,
+      "matches_public": true,
       "path": "source.archive",
-      "public_sha256": null,
+      "public_sha256": "5b1938a1ca48fb1e3b7ac4e6075d8acc6475be15065348779f352df0f42d5e89",
       "sha256": "5b1938a1ca48fb1e3b7ac4e6075d8acc6475be15065348779f352df0f42d5e89"
     }
   },
@@ -38,6 +38,8 @@
     "license": "CC-BY-4.0",
     "msc": [],
     "pdf": {
+      "bytes": 108445,
+      "sha256": "734a22a1e6a901dbed284b3c75196fc10976ca431ee19af7325f795faf20ffde",
       "url": "/api/v1/collected-papers/bala295462/files/pdf?version=4"
     },
     "previous_version": null,
@@ -46,6 +48,8 @@
     "record": "bala295462",
     "repository_name": "10.5281-zenodo.23971278",
     "source": {
+      "bytes": 18160,
+      "sha256": "5b1938a1ca48fb1e3b7ac4e6075d8acc6475be15065348779f352df0f42d5e89",
       "url": "/api/v1/collected-papers/bala295462/files/source?version=4"
     },
     "title": "Parity and product extensions of Bala's divisibilities (2026): OEIS A295462, References (record #19; contribution dated 23 August 2026)",
