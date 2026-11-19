@@ -29,3 +29,41 @@ Haobo Ma, Wenlin Zhang (2026). Parity and product extensions of Bala's divisibil
 ## Contributions
 
 Original authors are listed above. Formalization contributors and attribution are retained in `formalization/nodes.json`; repository pull requests do not confer verification or credit. Submit formalization attempts through the Mathesis attempt path described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+<!-- Mathesis generated repository guide; refresh with paper.py front. -->
+
+## Reading and materials
+
+[Paper site](https://papers.trureturing.org/10.5281-zenodo.23971278/) · [Frozen PDF](paper.pdf) · [Citation](CITATION.cff)
+
+[中文阅读](https://papers.trureturing.org/10.5281-zenodo.23971278/bala295462/zh/) · [Read in English](https://papers.trureturing.org/10.5281-zenodo.23971278/bala295462/en/)
+
+[Slides](https://papers.trureturing.org/10.5281-zenodo.23971278/bala295462/slides/) ([sources](books/bala295462/slides/)) · [Videos](https://papers.trureturing.org/10.5281-zenodo.23971278/bala295462/films/) ([sources](books/bala295462/films/))
+
+These are publication routes; available built materials are inventoried in [mathesis-materials.json](https://papers.trureturing.org/10.5281-zenodo.23971278/mathesis-materials.json).
+
+## Book and formalization
+
+Catalog formalization status above is separate from the statement comparisons below. A nearby declaration does not verify the complete written result.
+
+| Book result | Comparison with formal base | Compared declaration |
+|---|---|---|
+| `thm-parity` | same | `D5/S3/Arith/FactorialRatio/BalaA295462Parity.result` |
+| `cor-2` | variant | `D5/S3/Arith/FactorialRatio/BalaA295462Parity.result` |
+| `cor-3` | variant | `D5/S3/Arith/FactorialRatio/BalaA295462Parity.result` |
+| `cor-4` | variant | `D5/S3/Arith/FactorialRatio/BalaA295462Parity.result` |
+| `cor-families` | same | `D5/S3/Arith/FactorialRatio/BalaA295431Divisibility.result` |
+| `cor-6` | none | — |
+
+Book stage: **complete**; 0 pending claims. [Statement comparisons](.mathesis/review.json).
+
+## Repository map
+
+| Zone | Location |
+|---|---|
+| Paper record | `paper.json`, `CITATION.cff`, `paper.pdf`, `manuscript/`, `formalization/nodes.json`, `LICENSES/`, `.mathesis/` |
+| Content | `books/bala295462/`: Chinese/English text, figures, visualizations, videos, slides, assets |
+| Machinery | Upstream and layer managed paths; update with `tbook template update` |
+| Repository front | This README, changelog, contribution guide, licence, project/site/pin configuration, `template.d/` |
+
+See [the enforced layout](docs/layer-mathesis/LAYOUT.md). Preparation run records and built outputs stay outside the committed tree.

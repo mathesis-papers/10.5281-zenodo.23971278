@@ -1,0 +1,40 @@
+{
+  "results": {
+    "thm-parity": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Literal Lean claim: for every natural n there exists a natural m equal to the rational factorial ratio and Odd m iff every occupied i<j has i+4<=j. The green book environment states precisely this. The source also says positive; this additional clause is stated separately and deduced from factorial positivity, not attributed as an explicit positivity conjunct in result. n=0 gives m=1; empty support is valid."
+    },
+    "cor-2": {
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "The public parity theorem realizes a(n), not b(n); it contains no divisibility by 6n+1 or 10n+1, coprimality, quotient realization, or parity preservation after division. Full source Corollary 2 remains written-proof; reuse existing parity as prerequisite."
+    },
+    "cor-3": {
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Parity identifies the valid inputs but the public result does not state c_m, its four initial values and m>=4 recurrence, or the ordered u_j recursion with unique e. Preserve e<3 zero suffix cases. Formalization reuses parity."
+    },
+    "cor-4": {
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Public parity supplies four-separated support but states no bitwise formulas. Preserve all masks u,v<16 for XOR/AND/OR, all eleven triples, n=0, and the separate k=4,5 one-step-carry proof for masks 21 and 37. Also retain the proof observation for general r-separated supports and masks<2^r."
+    },
+    "cor-families": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295431Divisibility.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Expanded actual rational ratio and all five fixed expressions coincide with source Corollary 5. Constants are 36*(R-1)!*lcmUpto(12R) and (R-1)!*lcmUpto(R); all n natural, R>=1, 1<=k<=3. Signed denominator uses Int subtraction, not truncated Nat subtraction. It is nonzero even if R>12n. Lean additionally states nonzero denominators and T(0)/(12*0-1)=-1. Complete package already public at this pin; no request."
+    },
+    "cor-6": {
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "No exact public declaration found for the source formula package: four binomial identities, two formal hypergeometric series, Mathar consecutive ratio for n>=1, a(n) asymptotic and T(n) expansion through n^-2 with O(n^-3). Source formulas preserve all constants and attribution. No claim that finite checks or the divisibility theorem prove these analytic assertions."
+    }
+  }
+}

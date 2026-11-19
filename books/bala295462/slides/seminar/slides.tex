@@ -1,0 +1,220 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title[Binary spacing]{从二进制间距到整除性}
+\author{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1}Chrono AI, Singapore\\\inst{2}National University of Singapore, Singapore}
+\begin{document}
+% Manuscript: Title; Theorem 1
+\begin{frame}{从二进制间距到整除性}
+\titlepage
+\note{报告解读 Haobo Ma 与 Wenlin Zhang 的第 4 版论文。核心是二进制间距如何决定阶乘商的奇偶性，随后讨论乘积整除性。}
+\end{frame}
+% Manuscript: Sections 1--6
+\begin{frame}{路线}
+\tableofcontents
+\note{从两个小输入开始，再数素因子，证明两个方向，最后解释计数、位运算和第二个阶乘商。}
+\end{frame}
+\section{数字}
+% Manuscript: Section 1; Theorem 1
+\begin{frame}{一个零的差别}
+\[
+a(n)=\frac{(15n)!(2n)!}{(10n)!(6n)!n!},\quad n\geq0.
+\]
+\begin{center}
+\begin{tabular}{ccl}
+$n$ & 二进制 & 结论\\\hline
+$9$ & $1001$ & $a(9)$ 为偶数\\
+$17$ & $10001$ & $a(17)$ 为奇数
+\end{tabular}
+\end{center}
+阶乘商很大，输入的数字规则却很短。
+\note{阶乘 $m!$ 从 $1$ 乘到 $m$，$0!=1$。三个零意味着占据位置相距四。这里的奇偶判断来自随后陈述的定理，而非有限数值试验。}
+\end{frame}
+% Manuscript: Theorem 1; Section 1
+\begin{frame}{间距规则}
+$S(n)$：二进制中所有 $1$ 的位置。
+\begin{bookresult}{thm-parity}
+对每个 $n\geq0$，存在 $m\in\mathbb N$ 使 $a(n)=m$，且
+\[
+m\text{ 为奇数}\iff
+\forall i<j\text{ in }S(n),\ i+4\leq j.
+\]
+\end{bookresult}
+各阶乘为正，故 $a(n)>0$。$n=0$ 时 $a(0)=1$。
+\note{空支撑与只有一个位置的支撑均满足间距条件。上框忠实给出形式声明；正性单独由有理式得到。Bala 于 2026 年提出奇偶猜想；Bober 更早已证明这一类阶乘商的整性。}
+\end{frame}
+\section{证明}
+% Manuscript: Section 2; equations F and valuation
+\begin{frame}{数素因子}
+$v_p(N)$：$N$ 含素因子 $p$ 的个数。
+\[
+\begin{aligned}
+F(x)={}&\lfloor15x\rfloor+\lfloor2x\rfloor\\
+ &-\lfloor10x\rfloor-\lfloor6x\rfloor-\lfloor x\rfloor,\\
+v_p(a(n))={}&\sum_{k\geq1}F(n/p^k).
+\end{aligned}
+\]
+$F$ 周期为 $1$，仅取 $0,1$；和实际有限。
+\note{$m!$ 中 $p$ 的倍数贡献一个，$p^2$ 的倍数再贡献一个，这给出 Legendre 公式。三十个半开小区间的检查见阅读版精确证明；包括端点。$p^k>15n$ 时项为零。非负性先给整性，再使奇偶性化成每个二进制项为零。}
+\end{frame}
+% Manuscript: Section 2; tail estimate and sparse floor table
+\begin{frame}{低位尾部很小}
+在位置 $e$ 下方，每隔至少四位放一个 $1$：
+\[
+0\leq R<2^e\sum_{j\geq1}16^{-j}=\frac{2^e}{15}.
+\]
+取末 $k$ 位，最高占据位置为 $t$：
+\[
+x=\frac{1+u}{2^\ell},\quad 0\leq u<\frac1{15},\quad\ell=k-t\geq1.
+\]
+$\ell=1,2,3$ 或 $\ell\geq4$，均有 $F(x)=0$。
+\note{有限位使几何级数界严格。取末位就是对 $2^k$ 取余，周期性允许去掉整数部分。若余数为零则直接得零；非零时使用所示归一化，四种情形的五元组见阅读版。}
+\end{frame}
+% Manuscript: Section 2; bad-pair floor table
+\begin{frame}{第一对过近的位}
+从低位向高位，取第一对距离不足四的位置 $e<t$。
+\[
+d=t-e\in\{1,2,3\},\qquad
+x=\frac{2^d+1+u}{2^{d+1}}.
+\]
+更低位仍满足 $0\leq u<1/15$。三个情形均有 $F(x)=1$。
+\[
+v_2(a(n))\geq1.
+\]
+因此 $a(n)$ 为偶数，得到反方向。
+\note{选择第一对是关键：它确保更低位仍分离，可以继续使用严格尾部界。其余素因子计数项非负，所以找到一个 $1$ 已足够。这不是对所有不合法二进制串逐个穷举。}
+\end{frame}
+\section{推论}
+% Manuscript: Section 3; Corollary 2
+\begin{frame}{除去两个奇因子}
+\begin{bookresult}{cor-2}
+\[
+b(n)=\frac{a(n)}{(6n+1)(10n+1)}
+\]
+是正整数，且为奇数当且仅当 $S(n)$ 四分离。
+\end{bookresult}
+Bala 已证明两个因子的整除性；它们互素且均为奇数。
+\[
+5(6n+1)-3(10n+1)=2.
+\]
+\note{共同因子是奇数又整除 $2$，因此为 $1$。除去奇数乘积保持二进制赋值。$n=1$ 的例子是 $1001/(7\cdot11)=13$；$n=0$ 时商为 $1$。这仍是书面推论，不把奇偶定理的标注转给商。}
+\end{frame}
+% Manuscript: Section 3; Corollary 3
+\begin{frame}{从数字规则到递推}
+\begin{bookresult}{cor-3}
+\[
+\begin{aligned}
+c_0=1,\ c_1=2,\ c_2=3,\ c_3=4,\\
+c_m=c_{m-1}+c_{m-4}\quad(m\geq4).
+\end{aligned}
+\]
+$u_0=0$；$j>0$ 时取唯一 $c_e\leq j<c_{e+1}$，则
+\[
+u_j=2^e+u_{j-c_e}.
+\]
+\end{bookresult}
+长度 $m\geq4$ 时，合法串以 $0$ 或 $1000$ 开头。
+\note{$c_m$ 数小于 $2^m$ 的合法输入，$u_j$ 按大小列出全部输入，包含零。位长小于四时用四个初值，不应用递推。按序公式在 $e<3$ 时只有零尾部。}
+\end{frame}
+% Manuscript: Section 4; Corollary 4
+\begin{frame}{不重叠的四位窗口}
+\begin{bookresult}{cor-4}
+若 $a(n)$ 为奇数，$0\leq u,v<16$，则
+\[
+(un)\oplus(vn)=(u\oplus v)n.
+\]
+AND 与 OR 也成立。
+\end{bookresult}
+例如 $n=17$：$51\oplus153=170$。
+
+另外两个三元组 $(12,21,25)$、$(12,37,41)$ 需要一步进位论证。
+\note{XOR 比较两位是否不同。小于 $16$ 的掩码占至多四位，乘以分离输入时副本不重叠。这解释前九条 Hanna 恒等式；后两条不能由掩码界直接推出。Hanna（2006）列出，Karlsson（2022）已有 Walnut 验证。}
+\end{frame}
+\section{乘积}
+% Manuscript: Section 5; Corollary 5
+\begin{frame}{另一个阶乘商}
+\[
+T(n)=\frac{(12n)!n!}{(6n)!(4n)!(3n)!}.
+\]
+\begin{bookresult}{cor-families}
+以下五式对每个 $n\geq0$ 均为整数：
+\[
+\begin{gathered}
+\frac{385T(n)}{n+1},\quad\frac{5T(n)}{2n+1},\quad\frac{T(n)}{3n+1},\\
+\frac{770T(n)}{(n+1)(2n+1)(3n+1)},\quad\frac{T(n)}{12n-1}.
+\end{gathered}
+\]
+\end{bookresult}
+$T(0)/(12\cdot0-1)=-1$；分母乘积恰有三个因子。
+\note{这里是 A295431 而非 A295462。Bala 于 2025 年提出这些问题。整数可以是负数；第五式在零点等于负一，是保留带符号分母的必要边界。}
+\end{frame}
+% Manuscript: Section 5; Corollary 5
+\begin{frame}{任意长度，统一常数}
+令 $L_R=\operatorname{lcm}(1,\ldots,R)$。对 $R\geq1$，取
+\[
+\begin{aligned}
+C(k,R)&=36(R-1)!L_{12R}\quad(k=1,2,3),\\
+D(R)&=(R-1)!L_R.
+\end{aligned}
+\]
+\begin{itemize}
+\item 常数不依赖输入 $n$。
+\item 只断言充分，不断言最小。
+\item 下一页给出它们控制的两个乘积族。
+\end{itemize}
+\note{最小公倍数提供各素数的低次幂。阶乘处理其他因子之间的差；$36$ 提供小素数余量。}
+\end{frame}
+% Manuscript: Section 5; Corollary 5
+\begin{frame}{两个无界乘积族}
+\begin{bookresult}{cor-families}
+使用上一页的常数，对所有 $n\geq0$、$R\geq1$，
+\[
+\frac{C(k,R)T(n)}{\prod_{i=1}^R(kn+i)}\in\mathbb Z\quad(k=1,2,3),
+\]
+\[
+\frac{D(R)T(n)}{\prod_{\substack{1\leq i\leq R\\(i,12)=1}}(12n-i)}\in\mathbb Z.
+\]
+\end{bookresult}
+第二族的因子可以为负，但不为零。
+\note{$(i,12)=1$ 表示互素，因此 $12n-i\ne0$。长度 $R$ 可以超过 $12n$；分母按带符号整数解释。}
+\end{frame}
+% Manuscript: Section 5; product bound and small-prime bounds
+\begin{frame}{一个最大因子控制乘积}
+对每个素数 $p$，取赋值最大的分母因子，赋值为 $e$。
+\[
+v_p(\text{分母})\leq e+v_p((R-1)!).
+\]
+\begin{itemize}
+\item 其他因子由索引差 $i-i_0$ 控制。
+\item 周期取整函数控制最高的 $e$ 个素数幂层。
+\item 最小公倍数补低层，$36$ 补 $2,3$ 的余量。
+\end{itemize}
+\note{最大因子的索引为 $i_0$，减法显示其余赋值不超过索引差的赋值。差的乘积整除 $(i_0-1)!(R-i_0)!$，后者整除 $(R-1)!$。原文用数字和处理两小素数；阅读版保留这些细节。}
+\end{frame}
+\section{范围}
+% Manuscript: Section 6; Corollary 6 and coverage table
+\begin{frame}{公式、增长与边界}
+\begin{bookresult}{cor-6}
+两组二项式恒等式、${}_8F_7$ 与 ${}_4F_3$ 形式生成函数、Mathar 的递推以及两个阶乘商的渐近式均成立。
+\end{bookresult}
+\begin{itemize}
+\item 相邻系数比确定形式幂级数；递推从 $n\geq1$ 开始。
+\item Stirling 展开只在 $n\to\infty$ 使用。
+\item 矩密度及另 $51$ 个 sporadic 比值不在本文覆盖内。
+\end{itemize}
+\note{全部参数、常数与展开系数见阅读版的 Corollary 6 证明。二项式公式归于 Wu，A295462 渐近式归于 Eldar，A295431 递推归于 Mathar，渐近展开归于 Penson。素数幂同余与分数参数整性有原文所引的既有证明，不属于这里的新乘积论证。}
+\end{frame}
+% Manuscript: Bibliography; formal statement paragraph
+\begin{frame}{出处与下一步}
+\begin{itemize}
+\item 原文：Haobo Ma、Wenlin Zhang，第 4 版。
+\item \href{https://doi.org/10.5281/zenodo.23971279}{doi:10.5281/zenodo.23971279}，CC BY 4.0。
+\item Bober（2009）：阶乘商整性；Bala（2026）：两条整除性。
+\item Hanna（2006）、Karlsson（2022）：十一条 XOR 恒等式。
+\item 四项书面推论有共享形式化请求，见阅读版文献页。
+\end{itemize}
+\note{这里区分数学证明与其形式化。已有的两个形式定理不需要重建；四个请求分别是商、计数、位运算和公式。贡献者应复用现有前提，按上游规则直接提交聚焦贡献。}
+\end{frame}
+\appendix
+\FormalVerification
+\end{document}

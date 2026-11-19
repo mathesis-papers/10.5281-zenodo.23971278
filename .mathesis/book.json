@@ -1,0 +1,75 @@
+{
+  "book": "bala295462",
+  "pending_claims": [],
+  "results": {
+    "thm-parity": {
+      "claim": "collected:bala295462:4:s1",
+      "gids": [
+        "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "cor-2": {
+      "claim": "collected:bala295462:4:s2",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 2 — Quotient divisibility and parity",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/264"
+      }
+    },
+    "cor-3": {
+      "claim": "collected:bala295462:4:s3",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 3 — Counting and ordered enumeration",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/265"
+      }
+    },
+    "cor-4": {
+      "claim": "collected:bala295462:4:s4",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 4 — Bitwise operations and eleven XOR identities",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/266"
+      }
+    },
+    "cor-families": {
+      "claim": "collected:bala295462:4:s5",
+      "gids": [
+        "D5/S3/Arith/FactorialRatio/BalaA295431Divisibility.result"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Arith/FactorialRatio/BalaA295431Divisibility.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "cor-6": {
+      "claim": "collected:bala295462:4:s6",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 6 — Coefficient formulas and asymptotics",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/267"
+      }
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "Parity and product extensions of Bala's divisibilities (2026): OEIS A295462, References (record #19; contribution dated 23 August 2026)",
+    "zh": "Parity and product extensions of Bala's divisibilities (2026): OEIS A295462, References (record #19; contribution dated 23 August 2026)"
+  },
+  "version": 4,
+  "work": "bala295462"
+}

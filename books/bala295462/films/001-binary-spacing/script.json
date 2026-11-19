@@ -1,0 +1,181 @@
+{
+  "voice": "af_heart",
+  "speed": 0.96,
+  "say": {
+    "Ma": "Mah",
+    "Zhang": "Jahng",
+    "Bala": "Bah la"
+  },
+  "music": {
+    "bpm": 84,
+    "progression": "d-minor"
+  },
+  "scenes": [
+    {
+      "id": "question",
+      "name": "TWO INPUTS",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.25,
+        0.15,
+        0.0,
+        0.05
+      ],
+      "lines": [
+        [
+          "Seventeen is one zero zero zero one in binary. Nine has only two zeros between its ones.",
+          "17 的二进制是 10001；9 的两个 1 之间只有两个零。"
+        ],
+        [
+          "That missing zero decides whether an enormous factorial quotient is odd or even.",
+          "少一个零，竟能决定一个庞大阶乘商的奇偶性。"
+        ],
+        [
+          "Our quotient uses factorials, the products from one up to each displayed argument.",
+          "这里的阶乘，就是从 1 乘到所标出的整数。"
+        ]
+      ]
+    },
+    {
+      "id": "rule",
+      "name": "THE SPACING RULE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.25,
+        0.15,
+        0.0,
+        0.05
+      ],
+      "lines": [
+        [
+          "Ma and Zhang prove that the quotient is a natural number, odd exactly when every pair of ones is at least four positions apart.",
+          "Ma 与 Zhang 证明，这个商是自然数，且为奇数恰好要求每两个 1 至少相距四位。"
+        ],
+        [
+          "Three intervening zeros are enough. Seventeen qualifies; nine does not.",
+          "中间至少三个零即可；17 满足，9 不满足。"
+        ],
+        [
+          "Zero qualifies too: it has no occupied positions, and its quotient is one. Bala posed the parity question in twenty twenty six.",
+          "零也满足条件：它没有占据位置，商等于 1。Bala 于 2026 年提出这个奇偶问题。"
+        ]
+      ]
+    },
+    {
+      "id": "valuation",
+      "name": "COUNT TWOS",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.25,
+        0.15,
+        0.0,
+        0.05
+      ],
+      "lines": [
+        [
+          "To test oddness, count factors of two in the numerator, then subtract those in the denominator.",
+          "判断奇偶性，只需数分子的因子 2，再减去分母的因子 2。"
+        ],
+        [
+          "Multiples of two count once, multiples of four again, and multiples of eight again. This gives a sum of floor differences.",
+          "2 的倍数计一次，4 的倍数再计一次，8 的倍数继续计；于是得到取整差的和。"
+        ],
+        [
+          "Each floor difference is zero or one. The quotient is an integer because no prime is left in its reduced denominator.",
+          "每个取整差都是零或一；对所有素数都非负，约分后分母就没有素数，所以商是整数。"
+        ],
+        [
+          "It is odd exactly when every binary summand is zero. A positive summand cannot be cancelled.",
+          "它是奇数，恰好要求每个二进制项都为零；正的项无法被抵消。"
+        ]
+      ]
+    },
+    {
+      "id": "tail",
+      "name": "WHY FOUR POSITIONS",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.25,
+        0.15,
+        0.0,
+        0.05
+      ],
+      "lines": [
+        [
+          "With four-position spacing, the lower bits contribute less than one fifteenth of the highest occupied bit.",
+          "四位间距使低位尾部小于最高占据位的十五分之一。"
+        ],
+        [
+          "The bound comes from one sixteenth plus one over sixteen squared, and so on. There are only finitely many bits, so the inequality is strict.",
+          "这个界来自十六分之一、十六平方分之一等的几何和；位数有限，所以是严格不等式。"
+        ],
+        [
+          "At every binary suffix, this small tail keeps the floor difference at zero. That proves the odd direction.",
+          "对每个二进制后缀，这个小尾部都让取整差保持为零，证明了奇数方向。"
+        ]
+      ]
+    },
+    {
+      "id": "collision",
+      "name": "THE FIRST SHORT GAP",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.25,
+        0.15,
+        0.0,
+        0.05
+      ],
+      "lines": [
+        [
+          "Now choose the first short gap, reading from low bits to high bits. The lower tail still obeys the bound.",
+          "现在从低位往高位找第一对过近的 1；更低的尾部仍满足刚才的界。"
+        ],
+        [
+          "A gap of one, two, or three positions forces a floor difference of one. Every other term is nonnegative, so the quotient is even.",
+          "距离为一、二或三位时，都强制出现取整差 1；其余项非负，所以商是偶数。"
+        ],
+        [
+          "For nine, the suffix fraction is nine sixteenths. For seventeen, seventeen thirty seconds gives zero instead.",
+          "对 9，后缀小数是十六分之九；对 17，三十二分之十七则给出零。"
+        ]
+      ]
+    },
+    {
+      "id": "close",
+      "name": "A SHORT RULE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.25,
+        0.15,
+        0.0,
+        0.05
+      ],
+      "lines": [
+        [
+          "The result turns a huge factorial calculation into a short rule on input digits. The proof explains why the rule works.",
+          "这个结果把巨大的阶乘计算化成查看输入数字的短规则；证明解释了规则为何成立。"
+        ],
+        [
+          "The paper also derives counting recursions, bitwise identities, and divisibility results for a second factorial quotient.",
+          "原文还推导计数递推、按位恒等式，以及另一个阶乘商的整除结果。"
+        ],
+        [
+          "Read the bilingual explanation for the complete statements, proofs, and earlier work.",
+          "完整陈述、证明与前人工作，见双语解读。"
+        ]
+      ]
+    }
+  ]
+}

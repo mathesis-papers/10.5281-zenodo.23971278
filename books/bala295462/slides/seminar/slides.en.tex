@@ -1,0 +1,220 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title[Binary spacing]{From binary spacing to divisibility}
+\author{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1}Chrono AI, Singapore\\\inst{2}National University of Singapore, Singapore}
+\begin{document}
+% Manuscript: Title; Theorem 1
+\begin{frame}{From binary spacing to divisibility}
+\titlepage
+\note{This talk follows version 4 of the paper by Haobo Ma and Wenlin Zhang. The central question is how binary spacing decides the parity of a factorial quotient, followed by product divisibilities.}
+\end{frame}
+% Manuscript: Sections 1--6
+\begin{frame}{Road map}
+\tableofcontents
+\note{Start with two small inputs, count prime factors, prove both directions, and then discuss counting, bitwise operations and the second quotient.}
+\end{frame}
+\section{Digits}
+% Manuscript: Section 1; Theorem 1
+\begin{frame}{One missing zero}
+\[
+a(n)=\frac{(15n)!(2n)!}{(10n)!(6n)!n!},\quad n\geq0.
+\]
+\begin{center}
+\begin{tabular}{ccl}
+$n$ & Binary & Conclusion\\\hline
+$9$ & $1001$ & $a(9)$ even\\
+$17$ & $10001$ & $a(17)$ odd
+\end{tabular}
+\end{center}
+Huge products, a short rule on input digits.
+\note{The factorial $m!$ multiplies the integers from $1$ through $m$, with $0!=1$. Three intervening zeros mean occupied positions differ by four. These parity conclusions follow from the theorem, not from a finite numerical test.}
+\end{frame}
+% Manuscript: Theorem 1; Section 1
+\begin{frame}{The spacing rule}
+$S(n)$: the positions of the ones in binary.
+\begin{bookresult}{thm-parity}
+For every $n\geq0$, there is $m\in\mathbb N$ with $a(n)=m$, and
+\[
+m\text{ odd}\iff
+\forall i<j\text{ in }S(n),\ i+4\leq j.
+\]
+\end{bookresult}
+Factorial positivity gives $a(n)>0$. At $n=0$, $a(0)=1$.
+\note{Empty support and a single occupied position both satisfy the rule. The block states the formal declaration; positivity is a separate deduction from the rational expression. Bala posed the parity conjecture in 2026. Integrality of this factorial ratio predates it in Bober\textquotesingle s classification.}
+\end{frame}
+\section{Proof}
+% Manuscript: Section 2; equations F and valuation
+\begin{frame}{Count prime factors}
+$v_p(N)$: the number of factors of the prime $p$ in $N$.
+\[
+\begin{aligned}
+F(x)={}&\lfloor15x\rfloor+\lfloor2x\rfloor\\
+ &-\lfloor10x\rfloor-\lfloor6x\rfloor-\lfloor x\rfloor,\\
+v_p(a(n))={}&\sum_{k\geq1}F(n/p^k).
+\end{aligned}
+\]
+$F$ has period $1$, takes only $0,1$, and the sum is finite.
+\note{In $m!$, multiples of $p$ contribute once, multiples of $p^2$ contribute again, giving Legendre\textquotesingle s formula. The reading supplies all thirty half-open cells, including endpoints. Terms vanish for $p^k>15n$. Nonnegativity proves integrality and makes oddness equivalent to every binary summand vanishing.}
+\end{frame}
+% Manuscript: Section 2; tail estimate and sparse floor table
+\begin{frame}{The lower tail is small}
+Below position $e$, ones are at least four positions apart:
+\[
+0\leq R<2^e\sum_{j\geq1}16^{-j}=\frac{2^e}{15}.
+\]
+Read the last $k$ bits, with highest occupied position $t$:
+\[
+x=\frac{1+u}{2^\ell},\quad 0\leq u<\frac1{15},\quad\ell=k-t\geq1.
+\]
+For $\ell=1,2,3$ or $\ell\geq4$, we have $F(x)=0$.
+\note{Finitely many digits make the geometric bound strict. Reading a suffix is reduction modulo $2^k$; periodicity removes the integer part. A zero residue gives zero directly. Otherwise use the displayed normalization and the four five-tuples in the reading.}
+\end{frame}
+% Manuscript: Section 2; bad-pair floor table
+\begin{frame}{The first short gap}
+From low to high, take the first pair $e<t$ less than four apart.
+\[
+d=t-e\in\{1,2,3\},\qquad
+x=\frac{2^d+1+u}{2^{d+1}}.
+\]
+The lower tail still obeys $0\leq u<1/15$. Each case has $F(x)=1$.
+\[
+v_2(a(n))\geq1.
+\]
+Thus $a(n)$ is even, proving the converse.
+\note{Choosing the first pair is essential: lower positions still satisfy spacing, so the strict tail bound applies. Every other valuation summand is nonnegative, so one positive term suffices. There is no enumeration of all invalid binary strings.}
+\end{frame}
+\section{Consequences}
+% Manuscript: Section 3; Corollary 2
+\begin{frame}{Remove two odd factors}
+\begin{bookresult}{cor-2}
+\[
+b(n)=\frac{a(n)}{(6n+1)(10n+1)}
+\]
+is a positive integer, odd exactly when $S(n)$ is four-separated.
+\end{bookresult}
+Bala proved each divisibility. The factors are coprime and odd.
+\[
+5(6n+1)-3(10n+1)=2.
+\]
+\note{A common divisor is odd and divides two, so equals one. Division by the odd product preserves the binary valuation. At $n=1$, $1001/(7\cdot11)=13$; at $n=0$, the quotient is one. This remains a written corollary; the parity theorem\textquotesingle s evidence does not automatically cover the quotient.}
+\end{frame}
+% Manuscript: Section 3; Corollary 3
+\begin{frame}{From digits to recursion}
+\begin{bookresult}{cor-3}
+\[
+\begin{aligned}
+c_0=1,\ c_1=2,\ c_2=3,\ c_3=4,\\
+c_m=c_{m-1}+c_{m-4}\quad(m\geq4).
+\end{aligned}
+\]
+$u_0=0$; for $j>0$ take the unique $c_e\leq j<c_{e+1}$. Then
+\[
+u_j=2^e+u_{j-c_e}.
+\]
+\end{bookresult}
+For length $m\geq4$, a valid word begins with $0$ or $1000$.
+\note{$c_m$ counts valid inputs below $2^m$; $u_j$ lists all valid inputs increasingly, including zero. Use the four initial counts for lengths below four. In the ordered recursion, $e<3$ allows only the zero suffix.}
+\end{frame}
+% Manuscript: Section 4; Corollary 4
+\begin{frame}{Disjoint four-bit windows}
+\begin{bookresult}{cor-4}
+If $a(n)$ is odd and $0\leq u,v<16$, then
+\[
+(un)\oplus(vn)=(u\oplus v)n.
+\]
+The corresponding AND and OR identities also hold.
+\end{bookresult}
+At $n=17$: $51\oplus153=170$.
+
+The extra triples $(12,21,25)$ and $(12,37,41)$ use a one-step-carry argument.
+\note{XOR compares whether two bits differ. A mask below $16$ occupies at most four bits; its copies do not overlap in a spaced input. This explains the first nine Hanna identities. The final two do not follow directly from that mask bound. Hanna listed the identities in 2006; Karlsson verified them with Walnut in 2022.}
+\end{frame}
+\section{Products}
+% Manuscript: Section 5; Corollary 5
+\begin{frame}{A different factorial quotient}
+\[
+T(n)=\frac{(12n)!n!}{(6n)!(4n)!(3n)!}.
+\]
+\begin{bookresult}{cor-families}
+For every $n\geq0$, these five expressions are integers:
+\[
+\begin{gathered}
+\frac{385T(n)}{n+1},\quad\frac{5T(n)}{2n+1},\quad\frac{T(n)}{3n+1},\\
+\frac{770T(n)}{(n+1)(2n+1)(3n+1)},\quad\frac{T(n)}{12n-1}.
+\end{gathered}
+\]
+\end{bookresult}
+$T(0)/(12\cdot0-1)=-1$. The product has exactly three factors.
+\note{This is A295431, not A295462. Bala posed these questions in 2025. An integer may be negative: the fifth expression is minus one at zero, an essential signed-denominator boundary.}
+\end{frame}
+% Manuscript: Section 5; Corollary 5
+\begin{frame}{Any length, uniform constants}
+Let $L_R=\operatorname{lcm}(1,\ldots,R)$. For $R\geq1$, take
+\[
+\begin{aligned}
+C(k,R)&=36(R-1)!L_{12R}\quad(k=1,2,3),\\
+D(R)&=(R-1)!L_R.
+\end{aligned}
+\]
+\begin{itemize}
+\item These constants do not depend on the input $n$.
+\item They are sufficient, with no minimality assertion.
+\item The next frame gives the two product families they control.
+\end{itemize}
+\note{The lcm supplies low prime-power levels. The factorial handles differences between factors; $36$ supplies a small-prime allowance.}
+\end{frame}
+% Manuscript: Section 5; Corollary 5
+\begin{frame}{Two unbounded product families}
+\begin{bookresult}{cor-families}
+With the preceding constants, for all $n\geq0$ and $R\geq1$,
+\[
+\frac{C(k,R)T(n)}{\prod_{i=1}^R(kn+i)}\in\mathbb Z\quad(k=1,2,3),
+\]
+\[
+\frac{D(R)T(n)}{\prod_{\substack{1\leq i\leq R\\(i,12)=1}}(12n-i)}\in\mathbb Z.
+\]
+\end{bookresult}
+Factors in the second family can be negative but never zero.
+\note{$(i,12)=1$ means coprimality, so $12n-i\ne0$. The length $R$ may exceed $12n$; the denominator is a signed integer product.}
+\end{frame}
+% Manuscript: Section 5; product bound and small-prime bounds
+\begin{frame}{One maximal factor controls the product}
+For each prime $p$, select a denominator factor of maximal valuation $e$.
+\[
+v_p(\text{denominator})\leq e+v_p((R-1)!).
+\]
+\begin{itemize}
+\item Other factors are controlled by index differences $i-i_0$.
+\item A periodic floor function controls the highest prime-power levels.
+\item An lcm supplies low levels; $36$ supplies the allowance at $2,3$.
+\end{itemize}
+\note{At the maximal factor\textquotesingle s index $i_0$, subtraction bounds every other valuation by the valuation of its index difference. The product of differences divides $(i_0-1)!(R-i_0)!$, which divides $(R-1)!$. Digit sums handle the two small primes; the reading retains these details.}
+\end{frame}
+\section{Scope}
+% Manuscript: Section 6; Corollary 6 and coverage table
+\begin{frame}{Formulas, growth and limits}
+\begin{bookresult}{cor-6}
+Both sets of binomial identities, the ${}_8F_7$ and ${}_4F_3$ formal generating functions, Mathar's recurrence, and the two factorial-ratio asymptotics hold.
+\end{bookresult}
+\begin{itemize}
+\item Consecutive ratios determine formal series; the recurrence starts at $n\geq1$.
+\item Stirling expansions apply as $n\to\infty$.
+\item The moment density and the other $51$ sporadic ratios are outside scope.
+\end{itemize}
+\note{The reading\textquotesingle s Corollary 6 proof supplies every parameter, constant and expansion coefficient. The binomial identities are credited to Wu, the A295462 asymptotic to Eldar, the A295431 recurrence to Mathar and its expansion to Penson. Prime-power congruences and fractional-argument integrality have prior proofs cited by the paper, separate from these product arguments.}
+\end{frame}
+% Manuscript: Bibliography; formal statement paragraph
+\begin{frame}{Sources and next steps}
+\begin{itemize}
+\item Source: Haobo Ma and Wenlin Zhang, version 4.
+\item \href{https://doi.org/10.5281/zenodo.23971279}{doi:10.5281/zenodo.23971279}, CC BY 4.0.
+\item Bober (2009): integrality; Bala (2026): two divisibilities.
+\item Hanna (2006), Karlsson (2022): eleven XOR identities.
+\item Four written corollaries have shared formalization requests; see the reading's sources page.
+\end{itemize}
+\note{Distinguish mathematical proofs from their formalizations. The two existing formal theorems need no reconstruction. The four requests concern the quotient, counting, bitwise operations and formulas. Contributors should reuse existing prerequisites and submit focused contributions under upstream rules.}
+\end{frame}
+\appendix
+\FormalVerification
+\end{document}

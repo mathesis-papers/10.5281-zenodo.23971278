@@ -1,0 +1,29 @@
+{
+  "duration": "2:28",
+  "id": "001-binary-spacing",
+  "lean": [
+    "D5/S3/Arith/FactorialRatio/BalaA295462Parity.result"
+  ],
+  "narration": {
+    "engine": "Kokoro-82M v1.0 (onnx)",
+    "language": "en",
+    "voice": "af_heart"
+  },
+  "outputs": {
+    "cover": "bala295462_001_cover.jpg",
+    "narrated_720p": "bala295462_001_720p_narrated.mp4"
+  },
+  "publication_basis": "pinned",
+  "released": "2026-11-16",
+  "resolution": "1280x720@30",
+  "style": "trureturing cyberpunk · deterministic canvas",
+  "subject": "https://doi.org/10.5281/zenodo.23971279",
+  "subtitles": [
+    "zh",
+    "en"
+  ],
+  "summary": "A factorial quotient, binary spacing, and the first short gap that forces a factor of two.",
+  "summary_zh": "从阶乘商到二进制间距：第一对过近的 1 为什么留下因子 2。",
+  "title": "Three zeros decide parity",
+  "title_zh": "三个零决定奇偶性"
+}
