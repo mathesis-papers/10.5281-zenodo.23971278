@@ -2,8 +2,8 @@
   "schema": "trureturing-books.lock.v1",
   "repo": "the-omega-institute/trureturing",
   "branch": "dev",
-  "commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
-  "pinned_at": "2026-11-08T12:32:04Z",
+  "commit": "b05ceb497bd134559c3c0f84d925c1643f7c65cb",
+  "pinned_at": "2026-11-24T06:48:42Z",
   "declarations": {
     "D5/S3/Arith/FactorialRatio/BalaA295431Divisibility.result": {
       "module": "D5/S3/Arith/FactorialRatio/BalaA295431Divisibility",
@@ -17,7 +17,7 @@
       "module": "D5/S3/Arith/FactorialRatio/BalaA295462Parity",
       "name": "D5.S3.Arith.FactorialRatio.BalaA295462Parity.result",
       "kind": "theorem",
-      "statement_id": "sha256:33ec410ab186521fff4ed805a2b0da934bd6fa7e0df2887d813302aa422b7426",
+      "statement_id": "sha256:3d1db75ab8e96df3e7afd3387bf0a5bb096b66309d62885022221cd939855b03",
       "line": 468,
       "signature": "theorem result : D5.S3.Arith.FactorialRatio.BalaA295462Parity.claim"
     }
